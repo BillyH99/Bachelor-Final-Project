@@ -1,0 +1,6 @@
+Cara Menjalankan Program
+1. Buka Program TA_Plant_Controller_Param.m
+2. Jalankan Program section parameter plant dan salah satu parameter kontroler
+3. Buka Program TA_Plant_Controller_Simulink.slx
+4. Klik Blok Simulink MPC untuk merubah parameter MPC yang akan digunakan
+5. Jalankan Program
