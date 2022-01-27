@@ -1,0 +1,270 @@
+%% 1a
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var1a = 0;
+for k = 1:length(RMS_XTE_SC_var1a_ver2)
+    if RMS_XTE_SC_var1a_ver2(k,1)>2.4
+            xte_sc_ver2_var1a(k,1) = RMS_XTE_SC_var1a_ver2(k,1); 
+        else
+           xte_sc_ver2_var1a(k,1) = 0; 
+    end
+end
+%% 1b
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var1b = 0;
+for k = 1:length(RMS_XTE_SC_var1b_ver2)
+    if RMS_XTE_SC_var1b_ver2(k,1)>2.4
+            xte_sc_ver2_var1b(k,1) = RMS_XTE_SC_var1b_ver2(k,1); 
+        else
+           xte_sc_ver2_var1b(k,1) = 0; 
+    end
+end
+
+%% 1c
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var1c = 0;
+for k = 1:length(RMS_XTE_SC_var1c_ver2)
+    if RMS_XTE_SC_var1c_ver2(k,1)>2.4
+            xte_sc_ver2_var1c(k,1) = RMS_XTE_SC_var1c_ver2(k,1); 
+        else
+           xte_sc_ver2_var1c(k,1) = 0; 
+    end
+end
+
+%% 1d
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var1d = 0;
+for k = 1:length(RMS_XTE_SC_var1d_ver2)
+    if RMS_XTE_SC_var1d_ver2(k,1)>2.4
+            xte_sc_ver2_var1d(k,1) = RMS_XTE_SC_var1d_ver2(k,1); 
+        else
+           xte_sc_ver2_var1d(k,1) = 0; 
+    end
+end
+
+%% 2a
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var2a = 0;
+for k = 1:length(RMS_XTE_SC_var2a_ver2)
+    if RMS_XTE_SC_var2a_ver2(k,1)>2.4
+            xte_sc_ver2_var2a(k,1) = RMS_XTE_SC_var2a_ver2(k,1); 
+        else
+           xte_sc_ver2_var2a(k,1) = 0; 
+    end
+end
+
+%% 2b
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var2b = 0;
+for k = 1:length(RMS_XTE_SC_var1b_ver2)
+    if RMS_XTE_SC_var2b_ver2(k,1)>2.4
+            xte_sc_ver2_var2b(k,1) = RMS_XTE_SC_var2b_ver2(k,1); 
+        else
+           xte_sc_ver2_var2b(k,1) = 0; 
+    end
+end
+
+%% 2c
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var2c = 0;
+for k = 1:length(RMS_XTE_SC_var1b_ver2)
+    if RMS_XTE_SC_var2c_ver2(k,1)>2.4
+            xte_sc_ver2_var2c(k,1) = RMS_XTE_SC_var2c_ver2(k,1); 
+        else
+           xte_sc_ver2_var2c(k,1) = 0; 
+    end
+end
+
+%2d
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var2d = 0;
+for k = 1:length(RMS_XTE_SC_var2d_ver2)
+    if RMS_XTE_SC_var1b_ver2(k,1)>2.4
+            xte_sc_ver2_var2d(k,1) = RMS_XTE_SC_var2d_ver2(k,1); 
+        else
+           xte_sc_ver2_var2d(k,1) = 0; 
+    end
+end
+
+%% 3a
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var3a = 0;
+for k = 1:length(RMS_XTE_SC_var3a_ver2)
+    if RMS_XTE_SC_var3a_ver2(k,1)>2.4
+            xte_sc_ver2_var3a(k,1) = RMS_XTE_SC_var3a_ver2(k,1); 
+        else
+           xte_sc_ver2_var3a(k,1) = 0; 
+    end
+end
+
+%% 3b
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var3b = 0;
+for k = 1:length(RMS_XTE_SC_var3b_ver2)
+    if RMS_XTE_SC_var3b_ver2(k,1)>2.4
+            xte_sc_ver2_var3b(k,1) = RMS_XTE_SC_var3b_ver2(k,1); 
+        else
+           xte_sc_ver2_var3b(k,1) = 0; 
+    end
+end
+
+%% 3c
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var3c = 0;
+for k = 1:length(RMS_XTE_SC_var3c_ver2)
+    if RMS_XTE_SC_var3c_ver2(k,1)>2.4
+            xte_sc_ver2_var3c(k,1) = RMS_XTE_SC_var3c_ver2(k,1); 
+        else
+           xte_sc_ver2_var3c(k,1) = 0; 
+    end
+end
+
+%% 3d
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var3d = 0;
+for k = 1:length(RMS_XTE_SC_var3d_ver2)
+    if RMS_XTE_SC_var3d_ver2(k,1)>2.4
+            xte_sc_ver2_var3d(k,1) = RMS_XTE_SC_var3d_ver2(k,1); 
+        else
+           xte_sc_ver2_var3d(k,1) = 0; 
+    end
+end
+
+%% 7a
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var7a = 0;
+for k = 1:length(RMS_XTE_SC_var7a_ver2)
+    if RMS_XTE_SC_var7a_ver2(k,1)>2.4
+            xte_sc_ver2_var7a(k,1) = RMS_XTE_SC_var7a_ver2(k,1); 
+        else
+           xte_sc_ver2_var7a(k,1) = 0; 
+    end
+end
+
+
+%% 7b
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var7b = 0;
+for k = 1:length(RMS_XTE_SC_var7b_ver2)
+    if RMS_XTE_SC_var7b_ver2(k,1)>2.4
+            xte_sc_ver2_var7b(k,1) = RMS_XTE_SC_var7b_ver2(k,1); 
+        else
+           xte_sc_ver2_var7b(k,1) = 0; 
+    end
+end
+
+
+%% 7c
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var7c = 0;
+for k = 1:length(RMS_XTE_SC_var7c_ver2)
+    if RMS_XTE_SC_var7c_ver2(k,1)>2.4
+            xte_sc_ver2_var7c(k,1) = RMS_XTE_SC_var7c_ver2(k,1); 
+        else
+           xte_sc_ver2_var7c(k,1) = 0; 
+    end
+end
+
+
+%% 7d
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var7d = 0;
+for k = 1:length(RMS_XTE_SC_var7d_ver2)
+    if RMS_XTE_SC_var7d_ver2(k,1)>2.4
+            xte_sc_ver2_var7d(k,1) = RMS_XTE_SC_var7d_ver2(k,1); 
+        else
+           xte_sc_ver2_var7d(k,1) = 0; 
+    end
+end
+
+
+%% 8a
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var8a = 0;
+for k = 1:length(RMS_XTE_SC_var8a_ver2)
+    if RMS_XTE_SC_var8a_ver2(k,1)>2.4
+            xte_sc_ver2_var8a(k,1) = RMS_XTE_SC_var8a_ver2(k,1); 
+        else
+           xte_sc_ver2_var8a(k,1) = 0; 
+    end
+end
+
+%% 8b
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var8b = 0;
+for k = 1:length(RMS_XTE_SC_var8b_ver2)
+    if RMS_XTE_SC_var8b_ver2(k,1)>2.4
+            xte_sc_ver2_var8b(k,1) = RMS_XTE_SC_var8b_ver2(k,1); 
+        else
+           xte_sc_ver2_var8b(k,1) = 0; 
+    end
+end
+
+%% 8c
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var8c = 0;
+for k = 1:length(RMS_XTE_SC_var8c_ver2)
+    if RMS_XTE_SC_var8c_ver2(k,1)>2.4
+            xte_sc_ver2_var8c(k,1) = RMS_XTE_SC_var8c_ver2(k,1); 
+        else
+           xte_sc_ver2_var8c(k,1) = 0; 
+    end
+end
+
+%% 8d
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var8d = 0;
+for k = 1:length(RMS_XTE_SC_var8d_ver2)
+    if RMS_XTE_SC_var8d_ver2(k,1)>2.4
+            xte_sc_ver2_var8d(k,1) = RMS_XTE_SC_var8d_ver2(k,1); 
+        else
+           xte_sc_ver2_var8d(k,1) = 0; 
+    end
+end
+
+
+%% 9a
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var9a = 0;
+for k = 1:length(RMS_XTE_SC_var9a_ver2)
+    if RMS_XTE_SC_var9a_ver2(k,1)>2.4
+            xte_sc_ver2_var9a(k,1) = RMS_XTE_SC_var9a_ver2(k,1); 
+        else
+           xte_sc_ver2_var9a(k,1) = 0; 
+    end
+end
+
+
+%% 9b
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var9b = 0;
+for k = 1:length(RMS_XTE_SC_var9b_ver2)
+    if RMS_XTE_SC_var9b_ver2(k,1)>2.4
+            xte_sc_ver2_var9b(k,1) = RMS_XTE_SC_var9b_ver2(k,1); 
+        else
+           xte_sc_ver2_var9b(k,1) = 0; 
+    end
+end
+
+
+%% 9c
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var9c = 0;
+for k = 1:length(RMS_XTE_SC_var9c_ver2)
+    if RMS_XTE_SC_var9c_ver2(k,1)>2.4
+            xte_sc_ver2_var9c(k,1) = RMS_XTE_SC_var9c_ver2(k,1); 
+        else
+           xte_sc_ver2_var9c(k,1) = 0; 
+    end
+end
+
+
+%% 9d
+% Code Perbaikan Untuk XTE Sldiing Curve Jika diubah
+xte_sc_ver2_var9d = 0;
+for k = 1:length(RMS_XTE_SC_var9d_ver2)
+    if RMS_XTE_SC_var9d_ver2(k,1)>2.4
+            xte_sc_ver2_var9d(k,1) = RMS_XTE_SC_var9d_ver2(k,1); 
+        else
+           xte_sc_ver2_var9d(k,1) = 0; 
+    end
+end

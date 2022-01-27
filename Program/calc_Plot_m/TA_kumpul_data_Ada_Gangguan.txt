@@ -1,0 +1,360 @@
+%% data extract
+x2v_squeeze_2array = squeeze(x2v.Data(1,:,:)); % lintasan x
+y2v_squeeze_2array = squeeze(y2v.Data(1,:,:)); % lintasan y
+delta_jarak1_squeeze = delta_jarak1.Data;
+%delta_jarak2_squeeze = squeeze(delta_jarak2.Data(1,:,:));
+dy_SlidingCurve = cte_SC.Data; 
+PosX=posisiX.Data;
+PosY=posisiY.Data;
+waktu = time.Data;
+Max_time = max(waktu);
+Jarak_Tempuh = max(Mileage.Data);
+
+vir_target_2array = squeeze(vir_target.Data(1,:,:));
+Virtual_Target_x=vir_target_2array(1,:);
+Virtual_Target_y=vir_target_2array(2,:);
+
+deriv_yaw_target = squeeze(deriv_yaw_target_SC(1,:,:));
+yaw_target = yaw_target_SC;
+kec_USV = speed_USV;
+Force_yaw_MPC = Tr_mpc;
+Force_surge_MPC = Tu_mpc;
+Thrust_USV = thrust_force;
+Angle_USV=propulsion_angle;
+yaw_kapal = Yaw_Kapal.Data(:,1);
+
+
+XTE_SC = 0;
+for k = 1:length(dy_SlidingCurve)
+    if dy_SlidingCurve(k,1)>2.4 | dy_SlidingCurve(k,1)<-2.4
+            XTE_SC(k,1) = dy_SlidingCurve(k,1); 
+        else
+           XTE_SC(k,1) = 0; 
+    end
+end
+
+sudut_rudder_kapal = propulsion_angle;
+gaya_thrust = thrust_force;
+
+XTE_SC_ver2 = 0
+for k = 1:length(delta_jarak1_squeeze)
+    if delta_jarak1_squeeze(k,1)>2.4
+            XTE_SC_ver2(k,1) = delta_jarak1_squeeze(k,1); 
+        else
+           XTE_SC_ver2(k,1) = 0; 
+    end
+end
+kecepatan_sudut =kec_sudut.Data;
+
+%% Variasi 7
+%% Variasi a -> Gangguan Ombak = 0.3
+XTE_var7a = delta_jarak1_squeeze;
+x2v_var7a = x2v_squeeze_2array;
+y2v_var7a = y2v_squeeze_2array;
+PosX_var7a = PosX;
+PosY_var7a = PosY;
+RMS_XTE_SC_var7a = XTE_SC;
+RMS_XTE_SC_var7a_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var7a=Jarak_Tempuh;
+waktu_var7a = waktu;
+
+yaw_target_var7a= yaw_target;
+deriv_yaw_target_var7a=deriv_yaw_target;
+kec_USV_var7a= kec_USV;
+Force_yaw_MPC_var7a= Force_yaw_MPC;
+Force_surge_MPC_var7a=Force_surge_MPC;
+Thrust_USV_var7a=Thrust_USV;
+Angle_USV_var7a =Angle_USV;
+yaw_kapal_var7a =yaw_kapal;
+
+sudut_rudder_kapal_var7a = sudut_rudder_kapal;
+gaya_thrust_kapal_var7a=gaya_thrust;
+
+kecepatan_sudut_var7a =kecepatan_sudut;
+
+%% Variasi b -> Gangguan Angin = 0.5
+XTE_var7b = delta_jarak1_squeeze;
+x2v_var7b = x2v_squeeze_2array;
+y2v_var7b = y2v_squeeze_2array;
+PosX_var7b = PosX;
+PosY_var7b = PosY;
+RMS_XTE_SC_var7b = XTE_SC;
+RMS_XTE_SC_var7b_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var7b=Jarak_Tempuh;
+waktu_var7b = waktu;
+
+yaw_target_var7b= yaw_target;
+deriv_yaw_target_var7b=deriv_yaw_target;
+kec_USV_var7b= kec_USV;
+Force_yaw_MPC_var7b= Force_yaw_MPC;
+Force_surge_MPC_var7b=Force_surge_MPC;
+Thrust_USV_var7b=Thrust_USV;
+Angle_USV_var7b =Angle_USV;
+yaw_kapal_var7b =yaw_kapal;
+
+sudut_rudder_kapal_var7b = sudut_rudder_kapal;
+gaya_thrust_kapal_var7b=gaya_thrust;
+
+kecepatan_sudut_var7b =kecepatan_sudut;
+
+%% Variasi c -> Gangguan Arus = 0.3
+XTE_var7c = delta_jarak1_squeeze;
+x2v_var7c = x2v_squeeze_2array;
+y2v_var7c = y2v_squeeze_2array;
+PosX_var7c = PosX;
+PosY_var7c = PosY;
+RMS_XTE_SC_var7c = XTE_SC;
+RMS_XTE_SC_var7c_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var7c=Jarak_Tempuh;
+waktu_var7c = waktu;
+
+yaw_target_var7c= yaw_target;
+deriv_yaw_target_var7c=deriv_yaw_target;
+kec_USV_var7c= kec_USV;
+Force_yaw_MPC_var7c= Force_yaw_MPC;
+Force_surge_MPC_var7c=Force_surge_MPC;
+Thrust_USV_var7c=Thrust_USV;
+Angle_USV_var7c =Angle_USV;
+yaw_kapal_var7c =yaw_kapal;
+
+sudut_rudder_kapal_var7c = sudut_rudder_kapal;
+gaya_thrust_kapal_var7c=gaya_thrust;
+
+kecepatan_sudut_var7c =kecepatan_sudut;
+
+%% Variasi d -> Gangguan Total
+XTE_var7d = delta_jarak1_squeeze;
+x2v_var7d = x2v_squeeze_2array;
+y2v_var7d = y2v_squeeze_2array;
+PosX_var7d = PosX;
+PosY_var7d = PosY;
+RMS_XTE_SC_var7d = XTE_SC;
+RMS_XTE_SC_var7d_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var7d=Jarak_Tempuh;
+waktu_var7d = waktu;
+
+yaw_target_var7d= yaw_target;
+deriv_yaw_target_var7d=deriv_yaw_target;
+kec_USV_var7d= kec_USV;
+Force_yaw_MPC_var7d= Force_yaw_MPC;
+Force_surge_MPC_var7d=Force_surge_MPC;
+Thrust_USV_var7d=Thrust_USV;
+Angle_USV_var7d =Angle_USV;
+yaw_kapal_var7d =yaw_kapal;
+
+sudut_rudder_kapal_var7d = sudut_rudder_kapal;
+gaya_thrust_kapal_var7d=gaya_thrust;
+
+kecepatan_sudut_var7d =kecepatan_sudut;
+
+%% Variasi 8
+%% Variasi a -> Gangguan Ombak  = 0.3
+XTE_var8a = delta_jarak1_squeeze;
+x2v_var8a = x2v_squeeze_2array;
+y2v_var8a = y2v_squeeze_2array;
+PosX_var8a = PosX;
+PosY_var8a = PosY;
+RMS_XTE_SC_var8a = XTE_SC;
+RMS_XTE_SC_var8a_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var8a=Jarak_Tempuh;
+waktu_var8a = waktu;
+
+yaw_target_var8a= yaw_target;
+deriv_yaw_target_var8a=deriv_yaw_target;
+kec_USV_var8a= kec_USV;
+Force_yaw_MPC_var8a= Force_yaw_MPC;
+Force_surge_MPC_var8a=Force_surge_MPC;
+Thrust_USV_var8a=Thrust_USV;
+Angle_USV_var8a =Angle_USV;
+yaw_kapal_var8a =yaw_kapal;
+
+sudut_rudder_kapal_var8a = sudut_rudder_kapal;
+gaya_thrust_kapal_var8a=gaya_thrust;
+
+kecepatan_sudut_var8a =kecepatan_sudut;
+
+%% Variasi b -> Gangguan Angin = 0.5
+XTE_var8b = delta_jarak1_squeeze;
+x2v_var8b = x2v_squeeze_2array;
+y2v_var8b = y2v_squeeze_2array;
+PosX_var8b = PosX;
+PosY_var8b = PosY;
+RMS_XTE_SC_var8b = XTE_SC;
+RMS_XTE_SC_var8b_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var8b=Jarak_Tempuh;
+waktu_var8b = waktu;
+
+yaw_target_var8b= yaw_target;
+deriv_yaw_target_var8b=deriv_yaw_target;
+kec_USV_var8b= kec_USV;
+Force_yaw_MPC_var8b= Force_yaw_MPC;
+Force_surge_MPC_var8b=Force_surge_MPC;
+Thrust_USV_var8b=Thrust_USV;
+Angle_USV_var8b =Angle_USV;
+yaw_kapal_var8b =yaw_kapal;
+
+sudut_rudder_kapal_var8b = sudut_rudder_kapal;
+gaya_thrust_kapal_var8b=gaya_thrust;
+kecepatan_sudut_var8b =kecepatan_sudut;
+
+%% Variasi c -> Gangguan Arus = 0.3
+XTE_var8c = delta_jarak1_squeeze;
+x2v_var8c = x2v_squeeze_2array;
+y2v_var8c = y2v_squeeze_2array;
+PosX_var8c = PosX;
+PosY_var8c = PosY;
+RMS_XTE_SC_var8c = XTE_SC;
+RMS_XTE_SC_var8c_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var8c=Jarak_Tempuh;
+waktu_var8c = waktu;
+
+yaw_target_var8c= yaw_target;
+deriv_yaw_target_var8c=deriv_yaw_target;
+kec_USV_var8c= kec_USV;
+Force_yaw_MPC_var8c= Force_yaw_MPC;
+Force_surge_MPC_var8c=Force_surge_MPC;
+Thrust_USV_var8c=Thrust_USV;
+Angle_USV_var8c =Angle_USV;
+yaw_kapal_var8c =yaw_kapal;
+
+sudut_rudder_kapal_var8c = sudut_rudder_kapal;
+gaya_thrust_kapal_var8c =gaya_thrust;
+
+kecepatan_sudut_var8c =kecepatan_sudut;
+
+%% Variasi d -> Gangguan Total
+XTE_var8d = delta_jarak1_squeeze;
+x2v_var8d = x2v_squeeze_2array;
+y2v_var8d = y2v_squeeze_2array;
+PosX_var8d = PosX;
+PosY_var8d = PosY;
+RMS_XTE_SC_var8d= XTE_SC;
+RMS_XTE_SC_var8d_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var8d=Jarak_Tempuh;
+waktu_var8d = waktu;
+
+yaw_target_var8d= yaw_target;
+deriv_yaw_target_var8d=deriv_yaw_target;
+kec_USV_var8d= kec_USV;
+Force_yaw_MPC_var8d= Force_yaw_MPC;
+Force_surge_MPC_var8d=Force_surge_MPC;
+Thrust_USV_var8d=Thrust_USV;
+Angle_USV_var8d =Angle_USV;
+yaw_kapal_var8d =yaw_kapal;
+
+sudut_rudder_kapal_var8d = sudut_rudder_kapal;
+gaya_thrust_kapal_var8d=gaya_thrust;
+kecepatan_sudut_var8d =kecepatan_sudut;
+
+%% Variasi 9
+%% Variasi a -> Gangguan Ombak = 0.3
+XTE_var9a = delta_jarak1_squeeze;
+x2v_var9a = x2v_squeeze_2array;
+y2v_var9a = y2v_squeeze_2array;
+PosX_var9a = PosX;
+PosY_var9a = PosY;
+RMS_XTE_SC_var9a= XTE_SC;
+RMS_XTE_SC_var9a_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var9a=Jarak_Tempuh;
+waktu_var9a = waktu;
+
+yaw_target_var9a= yaw_target;
+deriv_yaw_target_var9a=deriv_yaw_target;
+kec_USV_var9a= kec_USV;
+Force_yaw_MPC_var9a= Force_yaw_MPC;
+Force_surge_MPC_var9a=Force_surge_MPC;
+Thrust_USV_var9a=Thrust_USV;
+Angle_USV_var9a =Angle_USV;
+yaw_kapal_var9a =yaw_kapal;
+
+sudut_rudder_kapal_var9a = sudut_rudder_kapal;
+gaya_thrust_kapal_var9a=gaya_thrust;
+
+kecepatan_sudut_var9a =kecepatan_sudut;
+
+%% Variasi b -> Gangguan Angin 0.5
+XTE_var9b = delta_jarak1_squeeze;
+x2v_var9b = x2v_squeeze_2array;
+y2v_var9b = y2v_squeeze_2array;
+PosX_var9b = PosX;
+PosY_var9b = PosY;
+RMS_XTE_SC_var9b = XTE_SC;
+RMS_XTE_SC_var9b_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var9b=Jarak_Tempuh;
+waktu_var9b = waktu;
+
+yaw_target_var9b= yaw_target;
+deriv_yaw_target_var9b=deriv_yaw_target;
+kec_USV_var9b= kec_USV;
+Force_yaw_MPC_var9b= Force_yaw_MPC;
+Force_surge_MPC_var9b=Force_surge_MPC;
+Thrust_USV_var9b=Thrust_USV;
+Angle_USV_var9b =Angle_USV;
+yaw_kapal_var9b =yaw_kapal;
+
+sudut_rudder_kapal_var9b = sudut_rudder_kapal;
+gaya_thrust_kapal_var9b = gaya_thrust;
+
+kecepatan_sudut_var9b =kecepatan_sudut;
+
+%% Variasi c -> Gangguan Arus = 0.3
+XTE_var9c = delta_jarak1_squeeze;
+x2v_var9c = x2v_squeeze_2array;
+y2v_var9c = y2v_squeeze_2array;
+PosX_var9c = PosX;
+PosY_var9c = PosY;
+RMS_XTE_SC_var9c = XTE_SC;
+RMS_XTE_SC_var9c_ver2 =XTE_SC_ver2;
+
+JarakTempuh_var9c=Jarak_Tempuh;
+waktu_var9c = waktu;
+
+yaw_target_var9c= yaw_target;
+deriv_yaw_target_var9c=deriv_yaw_target;
+kec_USV_var9c= kec_USV;
+Force_yaw_MPC_var9c= Force_yaw_MPC;
+Force_surge_MPC_var9c=Force_surge_MPC;
+Thrust_USV_var9c=Thrust_USV;
+Angle_USV_var9c =Angle_USV;
+yaw_kapal_var9c =yaw_kapal;
+
+sudut_rudder_kapal_var9c = sudut_rudder_kapal;
+gaya_thrust_kapal_var9c=gaya_thrust;
+kecepatan_sudut_var9c =kecepatan_sudut;
+
+%% Variasi d -> Gangguan Total
+XTE_var9d = delta_jarak1_squeeze;
+x2v_var9d = x2v_squeeze_2array;
+y2v_var9d = y2v_squeeze_2array;
+PosX_var9d = PosX;
+PosY_var9d = PosY;
+RMS_XTE_SC_var9d = XTE_SC;
+RMS_XTE_SC_var9d_ver2 =XTE_SC_ver2;
+
+
+JarakTempuh_var9d=Jarak_Tempuh;
+waktu_var9d = waktu;
+
+yaw_target_var9d= yaw_target;
+deriv_yaw_target_var9d=deriv_yaw_target;
+kec_USV_var9d= kec_USV;
+Force_yaw_MPC_var9d= Force_yaw_MPC;
+Force_surge_MPC_var9d=Force_surge_MPC;
+Thrust_USV_var9d=Thrust_USV;
+Angle_USV_var9d =Angle_USV;
+yaw_kapal_var9d =yaw_kapal;
+
+sudut_rudder_kapal_var9d = sudut_rudder_kapal;
+gaya_thrust_kapal_var9d=gaya_thrust;
+
+kecepatan_sudut_var9d =kecepatan_sudut;

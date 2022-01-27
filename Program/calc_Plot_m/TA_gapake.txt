@@ -1,0 +1,5 @@
+%% MSE
+mse_x = sum((x2v_squeeze_2array-PosX).^2)/length(waktu);
+mse_y = sum((y2v_squeeze_2array-PosY).^2)/length(waktu);
+mse_x
+mse_y
